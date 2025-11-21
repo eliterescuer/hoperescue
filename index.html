@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel - National Disaster Response</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'command-dark': '#0f172a',
+              'command-panel': '#1e293b',
+              'alert-red': '#ef4444',
+              'alert-orange': '#f97316',
+              'safe-green': '#10b981',
+              'tech-blue': '#3b82f6',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+      /* Custom Scrollbar for Dashboard feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+      /* Leaflet Customization */
+      .leaflet-popup-content-wrapper {
+        background: #1e293b;
+        color: #e2e8f0;
+        border: 1px solid #475569;
+      }
+      .leaflet-popup-tip {
+        background: #1e293b;
+      }
+      .incident-marker {
+        background: transparent;
+        border: none;
+      }
+      .pulse-ring {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        animation: pulsate 2s ease-out;
+        animation-iteration-count: infinite; 
+        opacity: 0.0;
+        border: 3px solid;
+      }
+      @keyframes pulsate {
+        0% {
+          transform: scale(0.1, 0.1);
+          opacity: 0.0;
+        }
+        50% {
+          opacity: 1.0;
+        }
+        100% {
+          transform: scale(1.2, 1.2);
+          opacity: 0.0;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

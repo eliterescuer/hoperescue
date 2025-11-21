@@ -1,0 +1,9 @@
+{
+  "name": "Sentinel: National Disaster Response System",
+  "description": "Integrated Earth Observation monitoring, Incident Command, and Victim Registration system powered by Gemini AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
